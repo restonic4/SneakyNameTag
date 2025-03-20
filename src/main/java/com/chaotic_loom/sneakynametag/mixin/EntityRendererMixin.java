@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -19,14 +20,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin {
     @Inject(method = "shouldShowName", at = @At("RETURN"), cancellable = true)
-    private void shouldShowName(Entity entity, CallbackInfoReturnable<Boolean> cir) {
+    private void shouldShowName(Entity entity, double d, CallbackInfoReturnable<Boolean> cir) {
         if (entity instanceof Player player && !shouldShowNametag(player)) {
             cir.setReturnValue(false);
         }
     }
 
     @Inject(method = "renderNameTag", at = @At("HEAD"), cancellable = true)
-    private void renderNameTag(Entity entity, Component component, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, float f, CallbackInfo ci) {
+    private void renderNameTag(EntityRenderState entityRenderState, Component component, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci) {
         if (entity instanceof Player player && !shouldShowNametag(player)) {
             ci.cancel();
         }

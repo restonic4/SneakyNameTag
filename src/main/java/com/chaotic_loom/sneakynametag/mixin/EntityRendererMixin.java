@@ -1,6 +1,5 @@
 package com.chaotic_loom.sneakynametag.mixin;
 
-import com.chaotic_loom.sneakynametag.SneakyNameTag;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;

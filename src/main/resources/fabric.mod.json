@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "sneakynametag",
+  "version": "${version}",
+  "name": "SneakyNameTag",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/marco/SneakyNameTag"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/sneakynametag/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.chaotic_loom.sneakynametag.SneakyNameTag"
+    ],
+    "main": [
+
+    ]
+  },
+  "mixins": [
+    "sneakynametag.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

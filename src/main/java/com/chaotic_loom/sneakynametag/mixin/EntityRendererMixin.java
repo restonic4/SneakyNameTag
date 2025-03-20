@@ -26,7 +26,7 @@ public abstract class EntityRendererMixin {
     }
 
     @Inject(method = "renderNameTag", at = @At("HEAD"), cancellable = true)
-    private void renderNameTag(Entity entity, Component component, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, CallbackInfo ci) {
+    private void renderNameTag(Entity entity, Component component, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, float f, CallbackInfo ci) {
         if (entity instanceof Player player && !shouldShowNametag(player)) {
             ci.cancel();
         }

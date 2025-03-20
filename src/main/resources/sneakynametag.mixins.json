@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.chaotic_loom.sneakynametag.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "sneakynametag.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "EntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

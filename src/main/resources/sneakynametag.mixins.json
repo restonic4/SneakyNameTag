@@ -4,9 +4,9 @@
   "package": "com.chaotic_loom.sneakynametag.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "LivingEntityRendererMixin"
   ],
   "client": [
-    "EntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
